@@ -9,6 +9,7 @@ const generateToken = (userId) => {
   );
 };
 
+// Register a new traveller
 // POST /api/auth/register
 export const registerUser = async (req, res) => {
   try {
@@ -45,6 +46,7 @@ export const registerUser = async (req, res) => {
       name: name.trim(),
       email: normalizedEmail,
       password,
+      role: "traveller",
     });
 
     const token = generateToken(user._id);
@@ -61,7 +63,14 @@ export const registerUser = async (req, res) => {
       },
     });
   } catch (error) {
-    console.error("Registration error:", error.message);
+    console.error("Registration error:", error);
+
+    if (error.code === 11000) {
+      return res.status(409).json({
+        success: false,
+        message: "A user with this email already exists",
+      });
+    }
 
     return res.status(500).json({
       success: false,
@@ -70,6 +79,7 @@ export const registerUser = async (req, res) => {
   }
 };
 
+// Log in an existing user
 // POST /api/auth/login
 export const loginUser = async (req, res) => {
   try {
@@ -118,11 +128,34 @@ export const loginUser = async (req, res) => {
       },
     });
   } catch (error) {
-    console.error("Login error:", error.message);
+    console.error("Login error:", error);
 
     return res.status(500).json({
       success: false,
       message: "Unable to log in",
+    });
+  }
+};
+
+// Return the currently authenticated user
+// GET /api/auth/me
+export const getCurrentUser = async (req, res) => {
+  try {
+    return res.status(200).json({
+      success: true,
+      user: {
+        id: req.user._id,
+        name: req.user.name,
+        email: req.user.email,
+        role: req.user.role,
+      },
+    });
+  } catch (error) {
+    console.error("Get current user error:", error);
+
+    return res.status(500).json({
+      success: false,
+      message: "Unable to retrieve user information",
     });
   }
 };
