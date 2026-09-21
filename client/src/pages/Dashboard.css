@@ -1,0 +1,293 @@
+.dashboard-page {
+  min-height: 100vh;
+  padding: 32px;
+  background: #f3f7f9;
+  color: #172033;
+}
+
+.dashboard-header {
+  max-width: 1150px;
+  margin: 0 auto 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.dashboard-brand {
+  margin-bottom: 7px;
+  color: #087f5b;
+  font-weight: 800;
+}
+
+.dashboard-header h1 {
+  margin-bottom: 5px;
+  font-size: clamp(28px, 4vw, 40px);
+}
+
+.dashboard-header > div > p:last-child {
+  color: #697386;
+}
+
+.logout-button {
+  padding: 10px 18px;
+  border: 1px solid #ccd5df;
+  border-radius: 8px;
+  background: white;
+  color: #344054;
+  cursor: pointer;
+}
+
+.search-section {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 28px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #075b48, #0a8f69);
+  color: white;
+  box-shadow: 0 16px 35px rgba(7, 91, 72, 0.2);
+}
+
+.search-section h2 {
+  margin-bottom: 7px;
+  font-size: 26px;
+}
+
+.search-section p {
+  color: #ddfff4;
+  line-height: 1.5;
+}
+
+.destination-form {
+  display: flex;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.destination-form input {
+  flex: 1;
+  min-width: 0;
+  padding: 14px 16px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+}
+
+.destination-form button {
+  padding: 14px 22px;
+  border: none;
+  border-radius: 10px;
+  background: #ffca58;
+  color: #213547;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.destination-form button:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.dashboard-error {
+  margin-top: 16px;
+  padding: 12px;
+  border-radius: 8px;
+  background: #fff0f0;
+  color: #b42318;
+}
+
+.empty-dashboard {
+  max-width: 1150px;
+  margin: 28px auto;
+  padding: 70px 24px;
+  border: 1px dashed #b7c3ce;
+  border-radius: 16px;
+  background: white;
+  text-align: center;
+}
+
+.empty-icon {
+  margin-bottom: 12px;
+  color: #087f5b;
+  font-size: 44px;
+}
+
+.empty-dashboard p {
+  margin-top: 7px;
+  color: #697386;
+}
+
+.risk-results {
+  max-width: 1150px;
+  margin: 28px auto 0;
+}
+
+.destination-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 20px;
+}
+
+.destination-heading p {
+  margin-bottom: 5px;
+  color: #697386;
+}
+
+.destination-heading h2 {
+  font-size: 30px;
+}
+
+.risk-badge {
+  min-width: 130px;
+  padding: 12px 18px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.risk-badge span,
+.risk-badge strong {
+  display: block;
+}
+
+.risk-badge span {
+  margin-bottom: 3px;
+  font-size: 21px;
+  font-weight: 800;
+}
+
+.risk-badge.low {
+  background: #dff8ed;
+  color: #087f5b;
+}
+
+.risk-badge.moderate {
+  background: #fff3cd;
+  color: #946200;
+}
+
+.risk-badge.high {
+  background: #ffe3e3;
+  color: #c92a2a;
+}
+
+.risk-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 18px;
+}
+
+.dashboard-card {
+  padding: 24px;
+  border: 1px solid #e0e6ec;
+  border-radius: 15px;
+  background: white;
+  box-shadow: 0 10px 25px rgba(31, 52, 71, 0.06);
+}
+
+.card-label {
+  margin-bottom: 10px;
+  color: #697386;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.card-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-heading h3 {
+  font-size: 42px;
+}
+
+.card-heading img {
+  width: 85px;
+  height: 85px;
+}
+
+.weather-description {
+  margin: 5px 0 22px;
+  color: #526071;
+  text-transform: capitalize;
+}
+
+.weather-details {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.weather-details div {
+  padding: 12px;
+  border-radius: 9px;
+  background: #f4f7f9;
+}
+
+.weather-details span,
+.weather-details strong {
+  display: block;
+}
+
+.weather-details span {
+  margin-bottom: 5px;
+  color: #697386;
+  font-size: 12px;
+}
+
+.risk-reasons {
+  padding-left: 19px;
+  color: #526071;
+  line-height: 1.8;
+}
+
+.location-details {
+  margin-top: 18px;
+  color: #526071;
+  line-height: 1.8;
+}
+
+.source-note {
+  margin-top: 16px;
+  color: #697386;
+  font-size: 13px;
+}
+
+.safety-disclaimer {
+  margin-top: 18px;
+  padding: 15px;
+  border-left: 4px solid #f0ad2c;
+  border-radius: 6px;
+  background: #fff8e6;
+  color: #715416;
+  line-height: 1.5;
+}
+
+@media (max-width: 850px) {
+  .risk-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .dashboard-page {
+    padding: 20px 14px;
+  }
+
+  .dashboard-header,
+  .destination-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .destination-form {
+    flex-direction: column;
+  }
+
+  .weather-details {
+    grid-template-columns: 1fr;
+  }
+}
