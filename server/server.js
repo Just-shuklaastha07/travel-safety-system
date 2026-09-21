@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import connectDB from "./config/db.js";
 import authRoutes from "./routes/authRoutes.js";
 import riskRoutes from "./routes/riskRoutes.js";
+import travelPlanRoutes from "./routes/travelPlanRoutes.js";
 
 dotenv.config();
 
@@ -13,6 +14,7 @@ app.use(cors());
 app.use(express.json());
 app.use("/api/auth", authRoutes);
 app.use("/api/risk", riskRoutes);
+app.use("/api/travel-plans", travelPlanRoutes);
 
 app.get("/", (req, res) => {
   res.status(200).json({
